@@ -1,177 +1,149 @@
-
-markdown
-# 📄 DocAI Agent 🐍
-### Intelligent Document Question Answering System powered by Groq + LangChain
-
-
-
+📄 DocAI Agent 🐍
+<div align="center">
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dark_UI-red.svg)
 ![LLM](https://img.shields.io/badge/Groq-Accelerated-orange.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-## 🚀 Overview
 
-DocAI Agent is a **smart document assistant** that allows users to upload files and ask questions in natural language.
 
-It reads, understands, and extracts answers from documents using **AI-powered semantic search + LLM reasoning**.
 
-> ⚡ Built for speed.  
-> 🧠 Designed for intelligence.  
-> 🎨 Styled with a dark developer UI.
 
----
 
-## 🧠 How It Works (AI Pipeline)
 
-```python
-# 1. Load Document
-docs = load_pdf("file.pdf")
 
-# 2. Split into chunks
-chunks = text_splitter.split_documents(docs)
 
-# 3. Create embeddings
-vectors = embedding_model.embed(chunks)
 
-# 4. Store in vector DB
-db = FAISS.from_documents(chunks, vectors)
 
-# 5. Ask question
-query = "What is this document about?"
+🧠 AI-Powered Document Question Answering System
 
-# 6. Retrieve context
-context = db.similarity_search(query)
+An intelligent system that allows users to upload documents and ask questions to extract accurate answers instantly using LLMs.
 
-# 7. Generate answer (Groq LLM)
-answer = llm.generate(context + query)
-````
+🚀 Developed by: Ahmed Nazzal
+🌐 Live Demo: https://your-project-link.com
+📦 GitHub: https://github.com/your-username/docai-agent
 
----
+</div>
+📌 Overview
 
-## ✨ Features
+DocAI Agent is an AI-powered system that reads documents (PDF/TXT), processes them, and answers user questions using semantic search + LLM reasoning.
 
-* ⚡ Ultra-fast responses using **Groq API**
-* 🧠 Context-aware semantic search
-* 📄 Supports PDF & TXT files
-* 🔍 Intelligent chunk retrieval system
-* 🎨 Dark-mode Streamlit UI (developer style)
-* 📊 Visual breakdown of document processing
-* 🔐 Safe environment variable handling
+It combines:
 
----
-
-## 🏗️ Tech Stack
-
-```text
-🐍 Python 3.10+
-🧠 LangChain
-⚡ Groq Cloud API
-📦 FAISS / ChromaDB
-🎨 Streamlit (Dark UI)
-```
-
----
-
-## 📁 Project Structure
-
-```bash
-document-qa-agent/
+📄 Document processing
+🧠 Vector embeddings
+⚡ Groq LLM inference
+🎨 Streamlit Dark UI
+✨ Features
+⚡ Fast AI Responses
+Powered by Groq API for ultra-low latency inference
+🧠 Smart Context Understanding
+Uses embeddings + semantic search
+Retrieves most relevant chunks only
+📄 Document Support
+PDF files
+TXT files
+🎨 Modern UI
+Dark-themed Streamlit interface
+Clean developer experience
+🔍 Transparent Processing
+Shows document chunking
+Shows retrieval process
+🛠️ Tech Stack
+Tool	Purpose
+Python	Core language
+Streamlit	UI framework
+LangChain	AI orchestration
+Groq API	LLM inference
+FAISS / ChromaDB	Vector database
+📁 Project Structure
+docai-agent/
 │
-├── app.py               # Main Streamlit app
-├── chains/              # LLM chains (LangChain logic)
-├── utils/               # Helpers (loaders, splitters)
-├── embeddings/         # Vector DB handling
-├── data/               # Sample documents
-├── .env                # API keys (hidden 🔐)
-└── requirements.txt
-```
-
----
-
-## ⚙️ Setup Guide
-
-### 1️⃣ Clone Repo
-
-```bash
+├── app.py
+├── requirements.txt
+├── .env
+│
+├── chains/
+│   ├── qa_chain.py
+│
+├── utils/
+│   ├── loader.py
+│   ├── splitter.py
+│
+├── embeddings/
+│   ├── vector_store.py
+│
+├── data/
+│   ├── sample.pdf
+│
+└── README.md
+⚙️ Installation & Setup
+1️⃣ Clone Repository
 git clone https://github.com/your-username/docai-agent.git
 cd docai-agent
-```
-
-### 2️⃣ Install Dependencies
-
-```bash
+2️⃣ Create Virtual Environment
+python -m venv venv
+3️⃣ Activate Environment
+Windows
+venv\Scripts\activate
+Linux / Mac
+source venv/bin/activate
+4️⃣ Install Dependencies
 pip install -r requirements.txt
-```
-
-### 3️⃣ Add API Key 🔐
-
-```env
-GROQ_API_KEY=your_key_here
-```
-
-### 4️⃣ Run App 🚀
-
-```bash
+5️⃣ Configure API Key
+GROQ_API_KEY=your_api_key_here
+6️⃣ Run Application
 streamlit run app.py
-```
+🧠 AI Pipeline Flow
+🧪 Example Usage
+Upload Document
+PDF or TXT file
+Ask Question
+What is the main topic of this document?
+AI Response
+The document discusses artificial intelligence and its applications in modern systems...
+🚀 Future Improvements
+📚 Multi-document chat
+💬 Chat history memory
+🔐 User authentication
+🌍 Multi-language support
+📊 Analytics dashboard
+☁️ Cloud deployment
+🐳 Docker Support
+FROM python:3.11
 
----
+WORKDIR /app
 
-## 🛡️ Security Notes
+COPY . .
 
-* 🔐 API keys are stored in `.env`
-* 🚫 `.env` is excluded from Git tracking
-* 🧠 No user data is permanently stored
-* ⚡ Requests handled in real-time only
+RUN pip install -r requirements.txt
 
----
+CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+☁️ Deployment
+Run with production server
+pip install gunicorn
 
-## 🎯 Use Cases
+(Streamlit deploy via cloud platforms like Render / Streamlit Cloud)
 
-* 📚 Research paper analysis
-* ⚖️ Legal document Q&A
-* 🏢 Company knowledge base
-* 🎓 Student study assistant
-* 📊 Data extraction from reports
+🤝 Contributing
+Fork → Clone → Create Branch → Commit → PR
+👨‍💻 Developer
+<div align="center">
+Ahmed Nazzal
 
----
+🐍 Python Developer
+🧠 AI Engineer
+⚡ LLM Systems Builder
 
-## 🎨 UI Preview
+</div>
+⭐ Support
 
-> A dark, minimal, hacker-style interface built for focus and productivity.
+If you like this project:
 
-```
-┌──────────────────────────────┐
-│  📄 Upload Document          │
-│  💬 Ask Question             │
-│  ⚡ Get Instant Answer        │
-└──────────────────────────────┘
-```
+⭐ Star the repo
+🍴 Fork it
+📢 Share it
 
----
-
-## 🤝 Contributing
-
-```python
-if you_like_project:
-    fork_repo()
-    create_branch()
-    improve_code()
-    submit_pull_request()
-```
-
----
-
-## 🧠 Final Note
-
-> “This project is not just a tool — it's an AI experience.”
-
----
-
-## 📜 License
-
-MIT License © 2026
-
-```
-
+<div align="center">
+Built with Python 🐍 + LangChain 🧠 + Groq ⚡
+</div>
