@@ -1,19 +1,16 @@
-## 📄 README.md (نسخة احترافية + ممتعة)
 
-````markdown
+markdown
 # 📄 DocAI Agent 🐍
 ### Intelligent Document Question Answering System powered by Groq + LangChain
 
-🚀 Developed by: **Ahmed Nazzal**  
-🌐 Live Demo:https://www.linkedin.com/in/ahmad-nazzal-61316b406?utm_source=share_via&utm_content=profile&utm_medium=member_ios 
-📦 GitHub:https://github.com/ahmadnazzal22 
+
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dark_UI-red.svg)
 ![LLM](https://img.shields.io/badge/Groq-Accelerated-orange.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
----
+
 
 ## 🚀 Overview
 
