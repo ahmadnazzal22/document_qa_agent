@@ -1,18 +1,4 @@
-تمام فهمت عليك — بدك README يكون **احترافي + فيه لمسة بايثون حقيقية + شكل ممتع + “يحسّس الناس إنه مشروع قوي ومصقول”** مش مجرد كلام.
 
-خلّيته لك نسخة مطوّرة فيها:
-
-* 🔹 رموز بايثون (🐍 + code blocks أجمل)
-* 🔹 شارات (Badges)
-* 🔹 لمسة ممتعة UI/Developer vibe
-* 🔹 حماية فكرية بسيطة (Security/Guarding section زي المشاريع الحقيقية)
-* 🔹 تنسيق أقوى
-
----
-
-## 📄 README.md (نسخة احترافية + ممتعة)
-
-````markdown
 # 📄 DocAI Agent 🐍
 ### Intelligent Document Question Answering System powered by Groq + LangChain
 
