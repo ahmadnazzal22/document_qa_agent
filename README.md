@@ -72,21 +72,32 @@ docai-agent/
 ├── app.py
 ├── requirements.txt
 ├── .env
+├── README.md
 │
 ├── chains/
+│   ├── __init__.py
 │   └── qa_chain.py
 │
 ├── utils/
+│   ├── __init__.py
 │   ├── loader.py
-│   ├── splitter.py
+│   └── splitter.py
 │
 ├── embeddings/
+│   ├── __init__.py
 │   └── vector_store.py
+│
+├── templates/
+│   └── index.html
 │
 ├── data/
 │   └── sample.pdf
 │
-└── README.md
+├── assets/
+│   ├── logo.png
+│   └── style.css
+│
+└── .gitignore
 ```
 
 ---
