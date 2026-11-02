@@ -1,53 +1,14 @@
-# 📄 DocAI Agent
+# 📄 DocAI — AI-Powered Document Q&A
+
+An AI-powered application that allows users to upload PDF and TXT documents and ask questions about their content using language models and semantic search.
 
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-UI-red?style=for-the-badge\&logo=streamlit\&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Groq](https://img.shields.io/badge/Groq-LLM-FF6B00?style=for-the-badge)
-![LangChain](https://img.shields.io/badge/LangChain-AI-2E8B57?style=for-the-badge)
+![LangChain](https://img.shields.io/badge/LangChain-AI-1C3C3C?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-
-</div>
-
----
-
-## 🧠 AI-Powered Document Q&A System
-
-> Upload your documents (PDF/TXT) and ask questions — get instant intelligent answers using LLM + semantic search.
-
-🚀 **Built by:** Ahmed Nazzal
-⚡ **Powered by:** Groq + LangChain + Vector Search
-
----
-
-## 🌐 Tech Stack (Language & Tools Cards)
-
-<div align="center">
-
-### 👨‍💻 Core Languages
-
-![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge\&logo=python)
-
----
-
-### ⚙️ Backend & AI
-
-![LangChain](https://img.shields.io/badge/LangChain-Orchestration-000000?style=for-the-badge)
-![Groq](https://img.shields.io/badge/Groq-Inference-FF6B00?style=for-the-badge)
-
----
-
-### 🎨 UI Layer
-
-![Streamlit](https://img.shields.io/badge/Streamlit-Dark_UI-FF4B4B?style=for-the-badge\&logo=streamlit)
-
----
-
-### 🧠 Vector DB
-
-![FAISS](https://img.shields.io/badge/FAISS-Vector_Search-1E90FF?style=for-the-badge)
-![ChromaDB](https://img.shields.io/badge/ChromaDB-Embeddings-8A2BE2?style=for-the-badge)
 
 </div>
 
@@ -55,155 +16,152 @@
 
 ## ✨ Features
 
-🔥 Ultra-fast AI responses (Groq optimized)
-🧠 Smart semantic retrieval (vector embeddings)
-📄 PDF + TXT document support
-🎨 Modern dark Streamlit UI
-🔍 Transparent AI reasoning pipeline
-⚡ Chunk-based document understanding
+- 📄 **Document Upload** — Supports PDF and TXT documents.
+- 💬 **Question Answering** — Ask questions about uploaded document content.
+- 🧠 **Semantic Search** — Retrieves relevant information based on meaning.
+- ✂️ **Text Chunking** — Splits documents into smaller sections for processing.
+- ⚡ **LLM Integration** — Uses the Groq API to generate answers.
+- 🎨 **Streamlit Interface** — Provides a user-friendly application interface.
 
 ---
 
-## 📁 Project Structure
+## 🛠️ Tech Stack
 
-```bash
-docai-agent/
-│
-├── app.py
-├── requirements.txt
-├── .env
-├── README.md
-│
-├── chains/
-│   ├── __init__.py
-│   └── qa_chain.py
-│
-├── utils/
-│   ├── __init__.py
-│   ├── loader.py
-│   └── splitter.py
-│
-├── embeddings/
-│   ├── __init__.py
-│   └── vector_store.py
-│
-├── templates/
-│   └── index.html
-│
-├── data/
-│   └── sample.pdf
-│
-├── assets/
-│   ├── logo.png
-│   └── style.css
-│
-└── .gitignore
+| Technology | Purpose |
+|---|---|
+| Python 3.10+ | Core programming language |
+| Streamlit | User interface |
+| LangChain | Document processing and application workflow |
+| Groq API | Language model inference |
+| FAISS / ChromaDB | Vector search, depending on the configured implementation |
+
+> Keep FAISS and ChromaDB in this list only if both are actually implemented in your code. Otherwise, list only the vector store you use.
+
+---
+
+## 🧠 How It Works
+
+```text
+       Document Upload
+              ↓
+      Document Text Extraction
+              ↓
+         Text Chunking
+              ↓
+       Generate Embeddings
+              ↓
+       Store Vector Data
+              ↓
+       Semantic Retrieval
+              ↓
+        Groq Language Model
+              ↓
+       Generate an Answer
+              ↓
+        Display the Result
 ```
 
 ---
 
-## 🚀 Installation
+## ⚙️ Installation & Setup
+
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/docai-agent.git
-cd docai-agent
+git clone https://github.com/ahmadnazzal22/document_qa_agent.git
+cd document_qa_agent
+```
 
+### 2. Create a Virtual Environment
+
+```bash
 python -m venv venv
-source venv/bin/activate   # or Windows venv\Scripts\activate
+```
 
+Activate it:
+
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+**macOS / Linux**
+
+```bash
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
----
+### 4. Configure Environment Variables
 
-## 🔑 Environment
+Create a `.env` file in the project root:
 
 ```env
-GROQ_API_KEY=your_api_key_here
+GROQ_API_KEY=your_groq_api_key_here
 ```
 
----
+Get your API key from the [Groq Console](https://console.groq.com/).
 
-## ▶️ Run App
+Keep your API key private and do not upload your `.env` file.
+
+### 5. Run the Application
 
 ```bash
 streamlit run app.py
 ```
 
----
-
-## 🧠 AI Pipeline
-
-📄 Document Upload
-⬇️
-✂️ Chunking (Text Splitter)
-⬇️
-🧠 Embeddings (Vector Store)
-⬇️
-🔍 Semantic Search
-⬇️
-⚡ Groq LLM Answer
-⬇️
-💬 Final Response
+Streamlit will provide a local URL. Open that URL in your browser to use the application.
 
 ---
 
-## 🧪 Example
+## 🧪 Example Usage
 
-**Q:** What is this document about?
-**A:** It describes artificial intelligence systems and their real-world applications...
+1. Launch the application.
+2. Upload a PDF or TXT document.
+3. Wait for the document to be processed.
+4. Enter a question about its content.
+5. Review the generated answer.
+
+**Example question:**
+
+> What is this document about?
+
+**Example answer:**
+
+> The answer is generated using information retrieved from the uploaded document.
 
 ---
 
-## 🚀 Future Upgrades
+## 🚀 Future Improvements
 
-* 💬 Chat memory system
-* 📚 Multi-document Q&A
-* 🌍 Multi-language support
-* 📊 Analytics dashboard
-* ☁️ Cloud deployment
-* 🔐 Authentication system
+Potential improvements for future versions include:
 
----
-
-## 🐳 Docker
-
-```dockerfile
-FROM python:3.11
-
-WORKDIR /app
-COPY . .
-
-RUN pip install -r requirements.txt
-
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
-```
+- 💬 Conversation memory.
+- 📚 Support for multiple documents.
+- 🌍 Improved multilingual support.
+- 📊 Usage and retrieval analytics.
+- ☁️ Cloud deployment.
+- 🔐 User authentication.
 
 ---
 
 ## 👨‍💻 Developer
 
-<div align="center">
+**Ahmad Nazzal**
 
-**Ahmed Nazzal**
-🐍 Python Developer | 🧠 AI Engineer | ⚡ LLM Builder
+Python Developer | Exploring AI & Automation
 
-</div>
-
----
-
-## ⭐ Support
-
-⭐ Star the repo
-🍴 Fork it
-📢 Share it
+- GitHub: [ahmadnazzal22](https://github.com/ahmadnazzal22)
+- Project: [DocAI Agent](https://github.com/ahmadnazzal22/document_qa_agent)
 
 ---
 
-<div align="center">
+## 📄 License
 
-🔥 Built with Python + LangChain + Groq 🔥
-
-</div>
-
----
+This project is licensed under the MIT License.
