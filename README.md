@@ -1,31 +1,28 @@
 # 📄 DocAI — AI-Powered Document Q&A
 
-An AI-powered application that allows users to upload PDF and TXT documents and ask questions about their content using language models and semantic search.
+### Ask Questions. Retrieve Information. Get AI-Powered Answers.
 
-<div align="center">
+DocAI is an AI-powered application that allows users to upload PDF and TXT documents and ask questions about their content using semantic search and Large Language Models (LLMs).
 
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![Groq](https://img.shields.io/badge/Groq-LLM-FF6B00?style=for-the-badge)
-![LangChain](https://img.shields.io/badge/LangChain-AI-1C3C3C?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-
-</div>
+Built with Python, Streamlit, LangChain, and Groq, the application processes documents, retrieves relevant information, and generates contextual answers based on the uploaded content.
 
 ---
 
 ## ✨ Features
 
-- 📄 **Document Upload** — Supports PDF and TXT documents.
-- 💬 **Question Answering** — Ask questions about uploaded document content.
-- 🧠 **Semantic Search** — Retrieves relevant information based on meaning.
-- ✂️ **Text Chunking** — Splits documents into smaller sections for processing.
-- ⚡ **LLM Integration** — Uses the Groq API to generate answers.
-- 🎨 **Streamlit Interface** — Provides a user-friendly application interface.
+| Feature | Description |
+|---|---|
+| 📄 Document Upload | Upload PDF and TXT documents |
+| 💬 Question Answering | Ask natural-language questions about document content |
+| 🧠 Semantic Search | Retrieve relevant content based on meaning |
+| ✂️ Text Chunking | Split documents into smaller sections for processing |
+| 🔍 Context Retrieval | Find relevant document sections for each question |
+| ⚡ LLM Integration | Generate answers using the Groq API |
+| 🎨 Interactive Interface | Use a simple Streamlit-based interface |
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
 | Technology | Purpose |
 |---|---|
@@ -33,33 +30,48 @@ An AI-powered application that allows users to upload PDF and TXT documents and 
 | Streamlit | User interface |
 | LangChain | Document processing and application workflow |
 | Groq API | Language model inference |
-| FAISS / ChromaDB | Vector search, depending on the configured implementation |
+| FAISS / ChromaDB | Vector storage and semantic retrieval, depending on implementation |
 
-> Keep FAISS and ChromaDB in this list only if both are actually implemented in your code. Otherwise, list only the vector store you use.
+> Make sure the listed vector database matches the actual implementation. Keep both FAISS and ChromaDB only if the project genuinely uses both.
 
 ---
 
 ## 🧠 How It Works
 
+DocAI follows a Retrieval-Augmented Generation (RAG) workflow to answer questions using information from uploaded documents.
+
 ```text
        Document Upload
-              ↓
-      Document Text Extraction
-              ↓
+              |
+              v
+    Document Text Extraction
+              |
+              v
          Text Chunking
-              ↓
-       Generate Embeddings
-              ↓
-       Store Vector Data
-              ↓
-       Semantic Retrieval
-              ↓
-        Groq Language Model
-              ↓
-       Generate an Answer
-              ↓
-        Display the Result
+              |
+              v
+      Generate Embeddings
+              |
+              v
+       Vector Storage
+              |
+              v
+      Semantic Retrieval
+              |
+              v
+     Relevant Context
+              |
+              v
+     Groq Language Model
+              |
+              v
+      Generate Answer
+              |
+              v
+       Display Result
 ```
+
+The retrieval process helps the language model generate answers using relevant information from the uploaded documents.
 
 ---
 
@@ -78,15 +90,13 @@ cd document_qa_agent
 python -m venv venv
 ```
 
-Activate it:
+**Windows:**
 
-**Windows**
-
-```bash
+```powershell
 venv\Scripts\activate
 ```
 
-**macOS / Linux**
+**macOS / Linux:**
 
 ```bash
 source venv/bin/activate
@@ -108,7 +118,11 @@ GROQ_API_KEY=your_groq_api_key_here
 
 Get your API key from the [Groq Console](https://console.groq.com/).
 
-Keep your API key private and do not upload your `.env` file.
+**Security reminder:**
+- Never share your API key publicly.
+- Do not upload your `.env` file to GitHub.
+- Add `.env` to your `.gitignore`.
+- Consider providing a `.env.example` file for other developers.
 
 ### 5. Run the Application
 
@@ -116,52 +130,11 @@ Keep your API key private and do not upload your `.env` file.
 streamlit run app.py
 ```
 
-Streamlit will provide a local URL. Open that URL in your browser to use the application.
+Streamlit will display a local URL in the terminal. Open it in your browser to access DocAI.
 
 ---
 
 ## 🧪 Example Usage
 
-1. Launch the application.
-2. Upload a PDF or TXT document.
-3. Wait for the document to be processed.
-4. Enter a question about its content.
-5. Review the generated answer.
-
-**Example question:**
-
-> What is this document about?
-
-**Example answer:**
-
-> The answer is generated using information retrieved from the uploaded document.
-
----
-
-## 🚀 Future Improvements
-
-Potential improvements for future versions include:
-
-- 💬 Conversation memory.
-- 📚 Support for multiple documents.
-- 🌍 Improved multilingual support.
-- 📊 Usage and retrieval analytics.
-- ☁️ Cloud deployment.
-- 🔐 User authentication.
-
----
-
-## 👨‍💻 Developer
-
-**Ahmad Nazzal**
-
-Python Developer | Exploring AI & Automation
-
-- GitHub: [ahmadnazzal22](https://github.com/ahmadnazzal22)
-- Project: [DocAI Agent](https://github.com/ahmadnazzal22/document_qa_agent)
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
+1. Start the application.
+2. Upload
